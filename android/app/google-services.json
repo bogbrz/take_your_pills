@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1049280172021",
+    "project_id": "nowyprojekt-402516",
+    "storage_bucket": "nowyprojekt-402516.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1049280172021:android:fc8be24a0bbc4f09161abc",
+        "android_client_info": {
+          "package_name": "com.boguszbrzoska.take_your_pills"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCb2_nKYzc2OugwkgQxNO3wExbqVv7lXi4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
