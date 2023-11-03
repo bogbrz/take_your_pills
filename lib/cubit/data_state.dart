@@ -2,7 +2,7 @@ part of 'data_cubit.dart';
 
 class DataState {
   final String errorMessage;
-  final List<DataModel> dataModels;
+  final bool isAdded;
 
-  DataState({required this.errorMessage, required this.dataModels});
+  DataState({required this.errorMessage, required this.isAdded});
 }

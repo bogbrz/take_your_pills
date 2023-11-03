@@ -5,8 +5,8 @@ class RemoteDataSource {
     return FirebaseFirestore.instance.collection('records').snapshots();
   }
 
-  Future<void> add({required String date, required bool isTaken}) async {
-    await FirebaseFirestore.instance.collection('records').add({
+  Future<void> add({required String date, required String isTaken}) {
+    return FirebaseFirestore.instance.collection('records').add({
       "date": date,
       "isTaken": isTaken,
     });

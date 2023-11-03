@@ -13,7 +13,7 @@ class ButtonPage extends StatelessWidget {
   });
 
   final String formattedDate;
-  final isTaken = true;
+  final String isTaken = "Wzięte";
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class ButtonPage extends StatelessWidget {
               appBar: AppBar(
                 title: const Text(
                   "Weź tabletki",
-                  style: TextStyle(fontSize: 60, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
                 ),
                 backgroundColor: Colors.amber,
                 centerTitle: true,
@@ -45,12 +45,12 @@ class ButtonPage extends StatelessWidget {
                     Text(
                       "Data: $formattedDate",
                       style: const TextStyle(
-                          fontSize: 50, fontWeight: FontWeight.bold),
+                          fontSize: 40, fontWeight: FontWeight.bold),
                     ),
                     const Text(
                       "Wziąłeś tabletki?",
                       style:
-                          TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: 45, fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(
                       height: 50,
@@ -64,10 +64,12 @@ class ButtonPage extends StatelessWidget {
                           context
                               .read<DataCubit>()
                               .add(date: formattedDate, isTaken: isTaken);
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                                builder: (context) => const CalendarPage()),
-                          );
+                          if (state.isAdded == true) {
+                            Navigator.of(context).push(
+                              MaterialPageRoute(
+                                  builder: (context) => const CalendarPage()),
+                            );
+                          }
                         },
                         child: Container(
                           alignment: Alignment.center,
