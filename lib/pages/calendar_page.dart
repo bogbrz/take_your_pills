@@ -18,23 +18,44 @@ class CalendarPage extends StatelessWidget {
         builder: (context, state) {
           final dataModels = state.dataModels;
           return Scaffold(
-            appBar: AppBar(),
             body: Center(
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    Container(
+                      width: MediaQuery.of(context).size.width * 0.9,
+                      decoration: BoxDecoration(
+                        color: Colors.green,
+                        border: Border.all(
+                          width: 2,
+                          color: Colors.black,
+                        ),
+                      ),
+                      child: Text(
+                        "Wziąłeś swoje tabletki",
+                        style: TextStyle(
+                          fontSize: 40,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
                     for (final dataModel in dataModels) ...[
                       Container(
+                        width: MediaQuery.of(context).size.width * 0.9,
                         decoration: BoxDecoration(
                             border: Border.all(width: 2, color: Colors.black)),
                         child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              Text(dataModel.date),
+                              Text("Data: ${dataModel.date},"),
                               const SizedBox(
                                 width: 5,
                               ),
-                              Text(dataModel.isTaken)
+                              Text("Status: ${dataModel.isTaken}")
                             ]),
                       ),
                       const SizedBox(

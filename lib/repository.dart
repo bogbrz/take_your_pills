@@ -18,10 +18,6 @@ class Repository {
   }
 
   Future<void> add({required String date, required String isTaken}) async {
-    try {
-      await _remoteDataSource.add(date: date, isTaken: isTaken);
-    } catch (error) {
-      return;
-    }
+    await _remoteDataSource.add(date: date, isTaken: isTaken);
   }
 }

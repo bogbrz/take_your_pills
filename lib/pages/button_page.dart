@@ -30,6 +30,7 @@ class ButtonPage extends StatelessWidget {
         },
         builder: (context, state) {
           return Scaffold(
+              backgroundColor: Colors.amber,
               appBar: AppBar(
                 title: const Text(
                   "Weź tabletki",
