@@ -11,13 +11,13 @@ class Repository {
         .map(
           (e) => DataModel(
             date: e['date'],
-            isTaken: e['istaken'],
+            isTaken: e['isTaken'],
           ),
         )
         .toList());
   }
 
-  Future<void> add({required String date, required bool isTaken}) async {
+  Future<void> add({required String date, required String isTaken}) async {
     await _remoteDataSource.add(date: date, isTaken: isTaken);
   }
 }
