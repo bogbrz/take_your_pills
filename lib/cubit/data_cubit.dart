@@ -12,11 +12,7 @@ class DataCubit extends Cubit<DataState> {
   final Repository _repository;
 
   Future<void> add({required String date, required String isTaken}) async {
-    try {
-      await _repository.add(date: date, isTaken: isTaken);
-      emit(DataState(errorMessage: '', isAdded: true));
-    } catch (error) {
-      emit(DataState(errorMessage: error.toString(), isAdded: false));
-    }
+    await _repository.add(date: date, isTaken: isTaken);
+    emit(DataState(errorMessage: '', isAdded: true));
   }
 }
