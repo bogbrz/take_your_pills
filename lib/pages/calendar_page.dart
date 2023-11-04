@@ -19,50 +19,65 @@ class CalendarPage extends StatelessWidget {
           final dataModels = state.dataModels;
           return Scaffold(
             body: Center(
-              child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      width: MediaQuery.of(context).size.width * 0.9,
-                      decoration: BoxDecoration(
-                        color: Colors.green,
-                        border: Border.all(
-                          width: 2,
-                          color: Colors.black,
-                        ),
-                      ),
-                      child: Text(
-                        "Wziąłeś swoje tabletki",
-                        style: TextStyle(
-                          fontSize: 40,
-                          fontWeight: FontWeight.bold,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
-                    ),
-                    SizedBox(
-                      height: 15,
-                    ),
-                    for (final dataModel in dataModels) ...[
-                      Container(
-                        width: MediaQuery.of(context).size.width * 0.9,
-                        decoration: BoxDecoration(
-                            border: Border.all(width: 2, color: Colors.black)),
-                        child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text("Data: ${dataModel.date},"),
-                              const SizedBox(
-                                width: 5,
+              child: Expanded(
+                child: ListView(children: [
+                  Expanded(
+                    child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            width: MediaQuery.of(context).size.width * 0.9,
+                            decoration: BoxDecoration(
+                              color: Colors.green,
+                              border: Border.all(
+                                width: 2,
+                                color: Colors.black,
                               ),
-                              Text("Status: ${dataModel.isTaken}")
-                            ]),
-                      ),
-                      const SizedBox(
-                        height: 8,
-                      )
-                    ]
-                  ]),
+                            ),
+                            child: Text(
+                              "Wziąłeś swoje tabletki",
+                              style: TextStyle(
+                                fontSize: 40,
+                                fontWeight: FontWeight.bold,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                          ),
+                          SizedBox(
+                            height: 15,
+                          ),
+                          for (final dataModel in dataModels) ...[
+                            Container(
+                              width: MediaQuery.of(context).size.width * 0.9,
+                              decoration: BoxDecoration(
+                                  border:
+                                      Border.all(width: 2, color: Colors.black),
+                                  color: Color.fromARGB(157, 150, 75, 5)),
+                              child: Column(
+                                children: [
+                                  Text(
+                                    "Data: ${dataModel.date}, ",
+                                    style: TextStyle(
+                                        fontSize: 25,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  Text(
+                                    "Status: ${dataModel.isTaken}",
+                                    style: TextStyle(
+                                        fontSize: 25,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 8,
+                            )
+                          ]
+                        ]),
+                  ),
+                ]),
+              ),
             ),
           );
         },
